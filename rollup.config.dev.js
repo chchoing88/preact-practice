@@ -3,6 +3,18 @@ import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import htmlTemplate from 'rollup-plugin-generate-html-template'
 import * as path from 'path'
+import os from 'os'
+
+const interfaces = os.networkInterfaces()
+const addresses = []
+for (var k in interfaces) {
+  for (var k2 in interfaces[k]) {
+    var address = interfaces[k][k2]
+    if (address.family === 'IPv4' && !address.internal) {
+      addresses.push(address.address)
+    }
+  }
+}
 
 export default {
   input: common.input,
@@ -20,7 +32,7 @@ export default {
     serve({
       open: true,
       contentBase: path.join(process.cwd(), '/dist'),
-      host: 'localhost',
+      host: addresses[0],
       port: 9000,
     }),
     livereload('dist'),

@@ -1,0 +1,32 @@
+{
+  "name": "global-page-event",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "start": "rollup -c ./rollup.config.dev.js --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-transform-react-jsx": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "rollup": "^1.27.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-generate-html-template": "^1.6.0",
+    "rollup-plugin-livereload": "^1.0.4",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-serve": "^1.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "core-js": "^3.5.0",
+    "preact": "^10.1.1",
+    "regenerator-runtime": "^0.13.3"
+  }
+}

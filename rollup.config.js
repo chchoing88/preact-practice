@@ -5,10 +5,16 @@ import babel from 'rollup-plugin-babel'
 import postcss from 'rollup-plugin-postcss'
 import { uglify } from 'rollup-plugin-uglify'
 
+export const context = process.env.npm_config_context
+
+if (!context) {
+  throw new Error(`please insert npm command line '--context={pageName}'`)
+}
+
 export default {
-  input: 'src/index.js',
+  input: `src/page/${context}.js`,
   output: {
-    file: 'dist/bundle.js',
+    file: `dist/bundle_${context}.js`,
     format: 'iife',
   },
   plugins: [

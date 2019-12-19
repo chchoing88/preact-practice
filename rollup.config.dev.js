@@ -1,4 +1,4 @@
-import common from './rollup.config'
+import common, { context } from './rollup.config'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import htmlTemplate from 'rollup-plugin-generate-html-template'
@@ -19,7 +19,7 @@ for (var k in interfaces) {
 export default {
   input: common.input,
   output: {
-    file: 'dist/bundle.dev.js',
+    file: `dist/bundle.dev_${context}.js`,
     format: 'iife',
     sourcemap: true,
   },

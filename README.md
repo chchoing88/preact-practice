@@ -9,12 +9,6 @@
 - axios
 
 
-## 브라우저 대응
-
-- android 4.4.2 이상
-- ios 9.0 이상
-- pc는 css flex 사용이 가능한 환경만 지원
-
 ## 개발 환경
 
 - node 10 이상
@@ -47,31 +41,3 @@ npm start --context={페이지이름}
 npm run build --context={페이지이름}
 ```
 
-## 폴더 구조
-
-```
-├── README.md
-├── dist
-|  ├── bundle.dev.js
-|  ├── bundle.dev.js.map
-|  ├── index.html
-|  └── static-web
-|     ├── event.json
-|     └── mando.jpeg
-├── package-lock.json
-├── package.json
-├── rollup.config.dev.js
-├── rollup.config.js
-└── src
-   ├── api
-   |  └── index.js
-   ├── assets
-   |  └── style
-   ├── component
-   ├── constants.js
-   ├── hooks
-   |  └── useEvent.js
-   ├── index.js
-   └── public
-      └── index.html
-```
